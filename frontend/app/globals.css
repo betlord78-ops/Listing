@@ -1,0 +1,162 @@
+:root {
+  --bg: #07111f;
+  --panel: #0c1b2d;
+  --panel-2: #10243b;
+  --text: #eef6ff;
+  --muted: #9fb6d2;
+  --accent: #3cc6ff;
+  --accent-2: #67e0ff;
+  --danger: #ff6f91;
+  --ok: #50d890;
+  --border: rgba(130, 179, 225, 0.18);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #050b14, var(--bg)); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.page {
+  width: min(1120px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 18px 0 48px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.brand-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0f3b61, #11b9ff);
+  box-shadow: 0 0 24px rgba(60, 198, 255, 0.28);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav a, .button, button {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(18,38,61,.95), rgba(10,23,38,.95));
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.button.primary, button.primary {
+  background: linear-gradient(180deg, #0fb7ff, #0d7fcb);
+  color: #021321;
+  border: none;
+  font-weight: 700;
+}
+
+.hero, .panel {
+  background: linear-gradient(180deg, rgba(13, 27, 44, .97), rgba(8, 18, 30, .97));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.28);
+}
+
+.hero h1, .section-title { margin: 0 0 8px; }
+.subtext { color: var(--muted); line-height: 1.5; }
+.grid { display: grid; gap: 16px; }
+.grid.cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.section { margin-top: 22px; }
+
+.banner {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+}
+
+.banner-image {
+  min-height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0b1828;
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(15,32,52,.95), rgba(8,18,30,.95));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.token-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: #12253a;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.muted { color: var(--muted); }
+.badge {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: rgba(17, 185, 255, .1);
+}
+.badge.featured { color: var(--accent-2); }
+.badge.pending { color: #ffd166; }
+.badge.rejected { color: var(--danger); }
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.stack { display: grid; gap: 12px; }
+.input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #091727;
+  color: var(--text);
+}
+textarea { min-height: 120px; resize: vertical; }
+.label { font-size: 14px; color: var(--muted); margin-bottom: 6px; display: block; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.message { padding: 12px 14px; border-radius: 12px; background: rgba(80, 216, 144, .12); border: 1px solid rgba(80, 216, 144, .28); }
+.message.error { background: rgba(255, 111, 145, .12); border-color: rgba(255,111,145,.28); }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.table th { color: var(--muted); font-size: 13px; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.footer { color: var(--muted); text-align: center; margin-top: 30px; }
+
+@media (max-width: 760px) {
+  .banner, .row { grid-template-columns: 1fr; }
+  .header { align-items: flex-start; flex-direction: column; }
+}
